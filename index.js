@@ -28,31 +28,19 @@ const objectTypes = [
 	return obj;
 }, {});
 
-const types = {
-
-	undefined () {
-		return 'undefined';
-	},
-
-	boolean () {
-		return 'boolean';
-	},
-
-	string () {
-		return 'string';
-	},
-
-	number () {
-		return 'number';
-	},
-
-	symbol () {
-		return 'symbol';
-	},
-
-	bigint () {
-		return 'bigint';
-	},
+const types = [
+	'undefined',
+	'boolean',
+	'string',
+	'number',
+	'symbol',
+	'bigint',
+].reduce((obj, primitiveName) => {
+	obj[primitiveName] = () => {
+		return primitiveName;
+	};
+	return obj;
+}, {
 
 	function () {
 		// Class or Lambda or general Function ?
@@ -103,8 +91,7 @@ const types = {
 		return objectTypes[name](entity) ? name.toLowerCase() : name;
 
 	}
-};
-
+});
 
 module.exports = (entity) => {
 

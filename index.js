@@ -6,11 +6,12 @@ const objectTypes = [
 	Array,
 
 	RegExp,
+	
 	Map,
 	WeakMap,
+	
 	Set,
 	WeakSet,
-	Array,
 
 	Proxy,
 	Reflect,

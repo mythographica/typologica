@@ -78,6 +78,15 @@ const types = {
 			return 'object';
 		}
 
+		const gotObjectedPrimitive = types[lname];
+
+		if (gotObjectedPrimitive) {
+			// String
+			// Number
+			// Boolean
+			return gotObjectedPrimitive;
+		}
+
 		if (entity instanceof Error) {
 			// Error as of
 			// 	EvalError,
@@ -88,15 +97,6 @@ const types = {
 			// 	TypeError,
 			// 	URIError,
 			return 'error';
-		}
-
-		const gotObjectedPrimitive = types[lname];
-
-		if (gotObjectedPrimitive) {
-			// String
-			// Number
-			// Boolean
-			return gotObjectedPrimitive;
 		}
 
 		return objectTypes[name](entity) ? name.toLowerCase() : name;

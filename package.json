@@ -1,6 +1,6 @@
 {
   "name": "typologica",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "dead simple type checker based on .constructor.name",
   "files": [
     "README.md",

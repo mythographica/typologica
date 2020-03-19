@@ -42,9 +42,11 @@ Keeping all this in mind we might build very simple type cheking system. Just if
 5. if `.consructor.name` returns something from primitive constructors, `'String'` or `'Number'` or .., then the answer is that `.name`, `.toLowerCase()`'d;
 6. if `.consructor.name` is `'Array'`, `'Date'`, `'Map'`, `'WeakMap'`, `'Set'`, `'WeakSet'` we might again `.toLowerCase()` the answer, because mostly this structures are used for storing Data;
 
-7. I'd personally suggest `'RegExp'`, `'Promise'`, `'Proxy'` and `'Reflect'` as something very tightly coupled with data, but this is my choice, judge me an Issue;
+7. I'd personally suggest `'RegExp'` and `'Promise'` as something very tightly coupled with data, but this is my choice, judge me an Issue;
 
-8. The last thing is `'Function'`, and just because this is a very special case, there is a simple answer, we will use direct answer from `typeof` received at `1.`;
+8. And yes, there are many types for Errors, and each one of them derives `Error`, so this is just an `'error'`;
+
+9. The last thing is `'Function'`, and just because this is a very special case, there is a simple answer, we will use direct answer from `typeof` received at `1.`;
 
 
 All the other types we might be willing to have in this "checker" for our new shiny Type System will receive `.constructor.name` as an automated Profit! It is not necessary to check them deeper, If we will wish we will `.constructor.name`, but we have to use names for constructors, and don't be anonymous. And it is very hard point, but if we will use `instanceof` for other checks we shall rely on our personal feelings, because it is a very is broken thing after `Object.create`'s dawn in JavaScript `;^)`:
@@ -63,6 +65,6 @@ So we will either avoid using Object.create if you need that checks, or will inv
 Finally: if we will bring very deep Prototype Chain here, for example Object->Array->Proxy->Object, then we shall use Last `.constructor.name` as a pointer to the LAST derived type. For sure, we might be willing additional typechecks in that case, but that is not so dead simple, isn't it?
 
 
-# Cons
+# Pros & Cons
 
-This library is a simple explanation of how everything works. It is very small, and we may rely on it for better understanding of JavaScript structures, especially `Object`'s derived structures. And, for sure, if we will use this understanding in a combination with other libraries, which does not provide the same level of abstraction in mind, we might fail. Or, from other side we might win with distinguished understanding where did they fail.
+This library is a simple explanation of how everything works. It is very small, and we may rely on it for better understanding of JavaScript structures, especially `Object`'s derived structures. And, for sure, if we will use this understanding in a combination with other libraries, which does not provide the same level of abstraction in mind, we might fail. Or, from other side we might win with distinguished explanation where do they fail.

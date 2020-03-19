@@ -1,5 +1,5 @@
 {
-  "name": "typologica",
+  "name": "@mythographica/typologica",
   "version": "0.0.1",
   "description": "dead simple type checker based on .constructor.name",
   "files": [

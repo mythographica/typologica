@@ -67,4 +67,4 @@ Finally: if we will bring very deep Prototype Chain here, for example Object->Ar
 
 # Pros & Cons
 
-This library is a simple explanation of how everything works. It is very small, and we may rely on it for better understanding of JavaScript structures, especially `Object`'s derived structures. And, for sure, if we will use this understanding in a combination with other libraries, which does not provide the same level of abstraction in mind, we might fail. Or, from other side we might win with distinguished explanation where do they fail.
+This library is a simple explanation of how everything works. It is very small, and we may rely on it for better understanding of JavaScript structures, especially `Object`'s derived structures. And, for sure, if we will use this understanding in a combination with other libraries, which does not provide the same level of abstraction in mind, we might fail. Or, from other side we might win with distinguished explanation where they fail.

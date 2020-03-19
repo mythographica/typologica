@@ -2,6 +2,15 @@
 
 Dead Simple naive type checker for JavaScript based on constructor.name
 
+[![Coverage Status](https://coveralls.io/repos/github/mythographica/typologica/badge.svg?branch=master)](https://coveralls.io/github/mythographica/typologica?branch=master)
+![Travis (.org)](https://img.shields.io/travis/mythographica/typologica)
+![NPM](https://img.shields.io/npm/l/typologica)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/mythographica/typologica)
+![GitHub last commit](https://img.shields.io/github/last-commit/mythographica/typologica)
+
+[![NPM](https://nodei.co/npm/typologica.png?mini=true)](https://www.npmjs.com/package/typologica)
+
+
 # Idea
 
 [Type Checking](https://en.wikipedia.org/wiki/Type_system#Type_checking) in JavaScript is very complicated for beginners. There is no "common" or "general" types. There are only [Data Types](https://en.wikipedia.org/wiki/Data_type). And everything the rest is something very different from well known and common used meaning of Types. You might be having `null` or `undefined` or something derived from `Object` or other constructors. And all this stuff is not a Type, but Structures. Even `undefined` has it's own constructor, just type "`void 0`" and you will invoke constructor for new `undefined` pointer. Therefore there is a lot of misunderstanding and misconceptions for those who comes to JavaScript from other languages, especially with Strict Typing Systems.

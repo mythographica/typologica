@@ -75,7 +75,7 @@ https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-j
 
 So we will either avoid using `Object.create` if we need that checks, or will invent something like hidden `Symbol`, pointing us to real constructor.
 
-Finally if should we bring very deep Prototype Chain to codebase, for example &ndash; Object->Array->Proxy->Object &ndash; then we might choosethe last `.constructor.name` as a pointer to the derived type. And for sure we might be willing additional typechecks in that case, but that is not so dead simple, isn't it?
+Finally if should we bring very deep Prototype Chain to codebase, for example &ndash; Object->Array->Proxy->Object &ndash; then we might choosethe last `.constructor.name` as a pointer to the derived type. And for sure we might be willing additional typechecks in that case, but that is not so dead simple.
 
 # Pros & Cons
 

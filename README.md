@@ -18,16 +18,22 @@ Dead Simple naive type checker for JavaScript based on constructor.name
 
 # Concept
 
-Each constructed structure has `instance.constructor.name`, where `instance` is a pointer to our variable and `.constructor.name` is obligatory path, pointing us to the name of constructor invoked during instance creation. Therefore all non primitive so-called "types" has `.constructor.name`. And what is "non primitive" then? Eh... non Data Types, but something else. And Data Types is that sort of thing which marks memory: [Primitives](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures):
+Each constructed structure has `instance.constructor.name`, where `instance` is a pointer to our variable and `.constructor.name` is obligatory path, pointing us to the name of constructor invoked during instance creation. Therefore all non primitive so-called "types" has `.constructor.name`. And what is "non primitive" then? Eh... non Data Types, but something else. And Data Types is that sort of thing which marks memory allocation as a type: data [Primitives](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures):
 
-* undefined
-* boolean
-* string
-* number
-* symbol
-* bigint
+* `undefined`
+* `Boolean`
+* `String`
+* `Number`
+* `Symbol`
+* `BigInt`
 
-And isn't it true that all these have constructors? Indeed, they do. But wich sort of constructor do they have? There is a bit difference: constructors for primitives do memory allocations for Data, and they then answers the question "which data type is that allocated memory". It is not so special, but it is different from everything the rest in JavaScript: when other constructors are for Structures, not for Data.
+and not so about data, but primitive of everything wich we discuss more in a moment below:
+
+* `null` 
+
+And isn't it true that all these have constructors? Indeed, they do. But wich sort of constructor do they have? There is a bit difference: constructors for primitives do memory allocations for Data, and they then answers the question "which data type is that allocated memory".
+
+It is not so special, but it is different from everything the rest in JavaScript: when other constructors are for Structures, not for Data.
 
 And there is one very special thing: superheroic `null`, which allows us to have all the other constructors. And din't `null` has own constructor itself? As it is the only SuperDuperPuperClass, and [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) we might say yes and no, simultaneously. And it is the only thing the other thing are derived from. It is so special and the same place so simple: but nobody cares of it, we just used to hate `typeof null === 'object'` and that is it. But instead of doing this, please just look for the whole system. It is simple, straight, and it might be said: "it is [Full](https://en.wikipedia.org/wiki/Complete_metric_space)".
 

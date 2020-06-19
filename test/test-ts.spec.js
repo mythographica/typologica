@@ -1,0 +1,10 @@
+'use strict';
+exports.__esModule = true;
+var __1 = require('..');
+var chai_1 = require('chai');
+require('mocha');
+describe('ts type checking works', function () {
+    it('test for string', function () {
+        chai_1.expect(__1.typologica('asdf')).equal('string');
+    });
+});

@@ -1,5 +1,6 @@
 'use strict';
 
+// const {typologica: checker} = require('..');
 const checker = require('..');
 
 const {assert, expect} = require('chai');
@@ -198,7 +199,7 @@ describe('errors objects tests', () => {
 });
 
 describe('unsupported types', () => {
-	
+
 	it('"object"   : Proxy function true', () => {
 		const proxy = new Proxy(function () {}, {
 			get () {
@@ -292,27 +293,27 @@ describe('unsupported types', () => {
 });
 
 describe('something constructed with constructor.name', () => {
-	
+
 	it('MyConstructor', () => {
 		function MyConstructor () {};
 		const instance = new MyConstructor();
 		const result = checker(instance);
 		expect(result).equal('MyConstructor');
 	});
-	
+
 	it('anonymous constructor : constructed without name', () => {
 		const MyConstructor = (() => function () {})();
 		const instance = new MyConstructor();
 		const result = checker(instance);
 		expect(result).equal('object');
 	});
-	
+
 	it('constructor with name Array but not an Array instance', () => {
 		function Array () {};
 		const instance = new Array();
 		const result = checker(instance);
 		expect(result).equal('Array');
 	});
-	
+
 });
 

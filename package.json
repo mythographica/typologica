@@ -1,6 +1,6 @@
 {
   "name": "typologica",
-  "version": "0.0.71",
+  "version": "0.0.72",
   "description": "dead simple type checker based on .constructor.name",
   "files": [
     "README.md",
@@ -12,10 +12,14 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/index.js",
-    "test:coverage": "nyc --reporter=lcov mocha --ui bdd --reporter spec ./test/index.js",
+    "build": "rm -rf ./lib && npx tsc --pretty && npm run lint",
+    "lint": "npx eslint --fix --ignore-path .gitignore ./lib",
+    "lint:test": "npx eslint --fix --ignore-path .gitignore ./test",
+    "test": "npm run build && mocha test/index.js",
+    "test:coverage": "npm run build && nyc --reporter=lcov mocha --ui bdd --reporter spec ./test/index.js",
     "debug": "npx mocha --reporter spec --inspect-brk test/index",
-    "report-coverage": "cat coverage/lcov.info | coveralls"
+    "report-coverage": "cat coverage/lcov.info | coveralls",
+    "ts:lint": "npx tslint --fix --ignore-path .gitignore ./src"
   },
   "repository": {
     "type": "git",
@@ -36,18 +40,23 @@
   },
   "homepage": "https://github.com/mythographica/typologica#readme",
   "devDependencies": {
+    "@types/node": "^13.13.12",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.6",
+    "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-no-arrow-this": "^1.2.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
   },
   "husky": {
     "hooks": {

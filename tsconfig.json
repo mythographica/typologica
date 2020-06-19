@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "ES6",
+		"lib": [
+			"ES5",
+		],
+		"strict": true,
+		"alwaysStrict": true,
+		"strictFunctionTypes": true,
+		"diagnostics": true,
+		"noImplicitThis": true,
+		"extendedDiagnostics": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"declaration": true,
+		"sourceMap": false,
+		"outDir": "lib",
+		"traceResolution": false,
+		"isolatedModules": true,
+		"removeComments": true,
+		"forceConsistentCasingInFileNames": true,
+		"types": ["node"]
+	},
+	"include": [
+		"./src/**/*.ts"
+	],
+	"exclude": [
+		"./lib/**/*",
+		"./coverage/**/*",
+		"./module/**/*",
+		"./test/**/*"
+	]
+}

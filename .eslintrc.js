@@ -31,7 +31,7 @@ module.exports = {
 				allow: [],
 			},
 		],
-		'space-before-function-paren' : [
+		'space-before-function-paren': [
 			'warn', {
 				'anonymous': 'always',
 				'named': 'always',
@@ -70,5 +70,15 @@ module.exports = {
 			},
 		],
 		yoda: 'warn',
-	}
+	},
+	'overrides': [
+		{
+			'files': ['lib/**/*.js'],
+			'rules': {
+				'prefer-rest-params': 0,
+				'no-redeclare': 0
+			}
+		}
+	]
+
 };

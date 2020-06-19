@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
-		"target": "ES6",
+		"target": "ES5",
 		"lib": [
-			"ES5",
+			"ES6",
 		],
 		"strict": true,
 		"alwaysStrict": true,
@@ -25,12 +25,11 @@
 		"types": ["node"]
 	},
 	"include": [
-		"./src/**/*.ts"
+		"./src/**/*.ts",
 	],
 	"exclude": [
 		"./lib/**/*",
 		"./coverage/**/*",
-		"./module/**/*",
-		"./test/**/*"
+		"./module/**/*"
 	]
 }

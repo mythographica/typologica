@@ -108,7 +108,7 @@ const types = [
 	}
 });
 
-export const typologica = function (entity:any):string {
+const typechecker = function (entity:any):string {
 
 	const typedAs = typeof entity;
 	const checkResult = types[typedAs](entity);
@@ -119,5 +119,8 @@ export const typologica = function (entity:any):string {
 
 };
 
+export const typologica = typechecker;
 export default typologica as typeof typologica;
-module.exports = typologica;
+(module).exports = exports.default;
+exports.default.default = exports.default;
+exports.default.typologica = exports.default;

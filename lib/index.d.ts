@@ -1,2 +1,2 @@
-declare const checker: (entity: any) => any;
-export default checker;
+export declare const typologica: (entity: any) => any;
+export default typologica;

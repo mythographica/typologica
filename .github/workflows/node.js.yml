@@ -1,0 +1,46 @@
+# Clean install of node dependencies, build the source, and run tests
+# across multiple supported Node versions.
+# Replaces the old Travis CI setup (.travis.yml, retired 2026-08).
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master, proto ]
+  pull_request:
+    branches: [ master, proto ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x, 24.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm test
+
+  coverage:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
+    - run: npm ci
+    - run: npm run test:coverage
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -3,13 +3,14 @@
 Dead Simple naive type checker for JavaScript based on constructor.name
 
 [![Coverage Status](https://coveralls.io/repos/github/mythographica/typologica/badge.svg?branch=master)](https://coveralls.io/github/mythographica/typologica?branch=master)
-![Travis (.org)](https://img.shields.io/travis/mythographica/typologica)
+[![Node.js CI](https://github.com/mythographica/typologica/actions/workflows/node.js.yml/badge.svg)](https://github.com/mythographica/typologica/actions/workflows/node.js.yml)
 ![NPM](https://img.shields.io/npm/l/typologica)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/mythographica/typologica)
 ![GitHub last commit](https://img.shields.io/github/last-commit/mythographica/typologica)
 
 [![NPM](https://nodei.co/npm/typologica.png?mini=true)](https://www.npmjs.com/package/typologica)
 
+> **Article:** [Dead Simple type checker for JavaScript](https://dev.to/wentout/dead-simple-type-checker-for-javascript-4l40) (dev.to, March 2020) is based on this README — the *Idea* and *Concept* sections below are the article's text.
 
 # Idea
 
@@ -39,8 +40,8 @@ And there is one very special thing: superheroic `null`, which allows us to have
 
 Again: there are only Data Types and Structures, so what is the Next Step? Yes, there is a next step. And this step is [`instanceof`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof). When we construct something, we might be willing to check if we did construction from exactly that constructor in future. And this points us to the next big question in JavaScript: [Inheritance](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance). It might be the other even greater complicated topic, no matter how many times you've read about it.  And from the other side there are not so many developers who was able to explain this topic well in each aspect. Remembering the early dates when there was a war between Netstcape Navigator and Internet Explorer 3~4 even I did two novelistic memoirs, please forgive me suggesting it:
 
-* Romantic, with only one example: [Architecture of Prototype Inheritance in JavaScript](https://dev.to/wentout/architecture-of-prototype-inheritance-in-javascript-ce6/edit)
-* Nostalgic, with a lot of memories behind, few examples: [Inheritance in JavaScript : Factory of Constructors with Prototype Chain : point of view from boring nerd](https://dev.to/wentout/inheritance-in-javascript-factory-of-constructors-with-prototype-chain-point-of-view-from-boring-nerd-2ddb)
+* Romantic, with only one example: [Architecture of Prototype Inheritance in JavaScript](https://github.com/mythographica/stash/blob/master/inheritance_architecture.md)
+* Nostalgic, with a lot of memories behind, few examples: [Inheritance in JavaScript : Factory of Constructors with Prototype Chain : point of view from boring nerd](https://github.com/mythographica/stash/blob/master/inheritance.md)
 
 Starting from this is a moment I have to say sorry again, because now I will think we can share the same meanings.
 
@@ -75,8 +76,7 @@ All the other types we might be willing to have in this "type checker" for our n
         baz = Object.create(bar); // Object {a: "a"}
         baz instanceof foo // true. oops.
 ```
-> Dear Eric, thank you very much for this example. Here is a link of Your wonderful article [Common Misconceptions About Inheritance in JavaScript](
-https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a)
+> Dear Eric, thank you very much for this example. Here is a link of Your wonderful article [Common Misconceptions About Inheritance in JavaScript](https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a)
 
 So we will either avoid using `Object.create` if we need that checks, or will invent something like hidden `Symbol`, pointing us to real constructor.
 

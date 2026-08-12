@@ -1,16 +1,14 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
-		"target": "ES5",
+		"target": "ES2015",
 		"lib": [
 			"ES6",
 		],
 		"strict": true,
 		"alwaysStrict": true,
 		"strictFunctionTypes": true,
-		"diagnostics": true,
 		"noImplicitThis": true,
-		"extendedDiagnostics": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUnusedLocals": true,

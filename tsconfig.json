@@ -14,7 +14,10 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"declaration": true,
-		"sourceMap": false,
+
+		"inlineSourceMap": true,
+		"inlineSources": true,
+
 		"outDir": "lib",
 		"traceResolution": false,
 		"isolatedModules": true,
